@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Generated Clash/Mihomo configs
+config.yaml
+merged.yaml
+boostnet*.yaml
+*-output.yaml
+*-fixed.yaml
+*-dynamic.yaml
+
+# Downloaded rule providers
+ruleset/
+
+# Local editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
