@@ -6,12 +6,17 @@
 
 ## 文件说明
 
-- `transform.py`：转换脚本
+- `transform.py`：Python 版转换脚本
+- `transform.go`：Go 版转换脚本（与 Python 版功能一致）
 - `example.cofig.yaml`：配置模板
 - `config.yaml`：默认生成的输出文件
 - `ruleset/`：使用 `--update-rules` 时下载 `.mrs` 规则文件的位置
 
 ## 环境要求
+
+提供 Python 和 Go 两个版本，功能完全相同，任选其一即可。
+
+### Python 版
 
 - Python 3.9 或更高版本
 - PyYAML
@@ -28,12 +33,33 @@ pip install pyyaml
 python -m pip install pyyaml
 ```
 
+### Go 版
+
+- Go 1.24 或更高版本
+- 依赖会自动通过 `go.mod` 拉取
+
+首次使用前先初始化：
+
+```bash
+go mod tidy
+```
+
+或者直接用 `go run` 运行（Go 会自动下载依赖）：
+
+```bash
+go run transform.go "你的订阅链接"
+```
+
 ## 基本使用
 
 在当前目录运行：
 
 ```bash
+# Python
 python transform.py "你的订阅链接"
+
+# Go
+go run transform.go "你的订阅链接"
 ```
 
 默认会生成：
@@ -45,13 +71,21 @@ config.yaml
 指定输出文件：
 
 ```bash
+# Python
 python transform.py "你的订阅链接" -o openclash.yaml
+
+# Go
+go run transform.go "你的订阅链接" -o openclash.yaml
 ```
 
 合并多个订阅到同一个配置：
 
 ```bash
+# Python
 python transform.py "订阅链接1" "订阅链接2" "订阅链接3" -o merged.yaml
+
+# Go
+go run transform.go "订阅链接1" "订阅链接2" "订阅链接3" -o merged.yaml
 ```
 
 脚本会合并所有订阅里的节点，并按节点类型、服务器、端口、UUID/密码自动去重。
@@ -59,7 +93,11 @@ python transform.py "订阅链接1" "订阅链接2" "订阅链接3" -o merged.ya
 指定模板文件：
 
 ```bash
+# Python
 python transform.py "你的订阅链接" -t example.cofig.yaml -o config.yaml
+
+# Go
+go run transform.go "你的订阅链接" -t example.cofig.yaml -o config.yaml
 ```
 
 ## OpenClash 推荐用法
@@ -68,6 +106,12 @@ python transform.py "你的订阅链接" -t example.cofig.yaml -o config.yaml
 
 ```bash
 python transform.py "你的订阅链接" -o config.yaml
+```
+
+Go 版用法完全一致，只需把 `python transform.py` 换成 `go run transform.go`：
+
+```bash
+go run transform.go "你的订阅链接" -o config.yaml
 ```
 
 然后在 OpenClash 中导入 `config.yaml`。
@@ -82,6 +126,12 @@ python transform.py "你的订阅链接" -o config.yaml
 
 ```bash
 python transform.py "你的订阅链接" --keep-include-all
+```
+
+Go 版同理：
+
+```bash
+go run transform.go "你的订阅链接" --keep-include-all
 ```
 
 这种模式更依赖 Mihomo 的扩展能力，不建议用于老版本 Clash 或兼容性不确定的 OpenClash 配置。
@@ -111,6 +161,23 @@ Clash/Mihomo/OpenClash 会根据 `interval` 自动下载和更新规则。
 python transform.py "你的订阅链接" --update-rules
 ```
 
+Go 版：
+
+```bash
+go run transform.go "你的订阅链接" --update-rules
+```
+
+## Go 版编译为二进制
+
+如果你想把 Go 脚本编译成独立可执行文件，方便不依赖 Go 环境使用：
+
+```bash
+go build -o transform ./...
+./transform "你的订阅链接"
+```
+
+编译后的二进制不依赖 `go.mod` 外的内容，可以直接分发或放入 PATH。
+
 ## 支持的订阅格式
 
 - Clash/Mihomo YAML 订阅
@@ -135,14 +202,14 @@ python transform.py "你的订阅链接" --update-rules
 
 ## 参数说明
 
-| 参数 | 说明 |
-| --- | --- |
-| `subscriptions` | 必填，一个或多个订阅链接 |
-| `-o, --output` | 输出文件，默认 `config.yaml` |
-| `-t, --template` | 模板文件，默认 `example.cofig.yaml` |
-| `--update-rules` | 转换时下载 `.mrs` 规则文件 |
-| `--keep-include-all` | 保留 Mihomo 的 `include-all` 分组写法 |
-| `--user-agent` | 请求订阅时使用的 User-Agent，默认 `clash.meta` |
+| Python 参数 | Go 参数 | 说明 |
+| --- | --- | --- |
+| `subscriptions` | `subscriptions` | 必填，一个或多个订阅链接 |
+| `-o, --output` | `-o` | 输出文件，默认 `config.yaml` |
+| `-t, --template` | `-t` | 模板文件，默认 `example.cofig.yaml` |
+| `--update-rules` | `-update-rules` | 转换时下载 `.mrs` 规则文件 |
+| `--keep-include-all` | `-keep-include-all` | 保留 Mihomo 的 `include-all` 分组写法 |
+| `--user-agent` | `-user-agent` | 请求订阅时使用的 User-Agent，默认 `clash.meta` |
 
 ## 常见问题
 
@@ -193,6 +260,8 @@ python transform.py "你的订阅链接" -o config.yaml
 如果你使用了 `--update-rules`，下载失败通常是网络访问 GitHub raw 链接失败。可以不加该参数重新生成配置。
 
 ## 示例
+
+以下示例均为 Python 版，`go run transform.go` 的参数和用法完全相同。如果已编译为 `./transform` 二进制，直接用 `./transform` 即可。
 
 生成 OpenClash 配置：
 

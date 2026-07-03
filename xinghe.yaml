@@ -1,0 +1,3875 @@
+mixed-port: 7897
+allow-lan: true
+mode: rule
+log-level: info
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: strict
+dns:
+  enable: true
+  listen: "127.0.0.1:5335"
+  use-system-hosts: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  default-nameserver: [180.76.76.76, 182.254.118.118, 8.8.8.8, 180.184.2.2]
+  nameserver: [180.76.76.76, 119.29.29.29, 180.184.1.1, 223.5.5.5, 8.8.8.8, "https://223.6.6.6/dns-query#h3=true", "https://dns.alidns.com/dns-query", "https://cloudflare-dns.com/dns-query", "https://doh.pub/dns-query"]
+  fallback: ["https://000000.dns.nextdns.io/dns-query#h3=true", "https://dns.alidns.com/dns-query", "https://doh.pub/dns-query", "https://public.dns.iij.jp/dns-query", "https://101.101.101.101/dns-query", "https://208.67.220.220/dns-query", "tls://8.8.4.4", "tls://1.0.0.1:853", "https://cloudflare-dns.com/dns-query", "https://dns.google/dns-query"]
+  fallback-filter:
+    geoip: true
+    ipcidr: [240.0.0.0/4, 0.0.0.0/32, 127.0.0.1/32]
+    domain: ["+.google.com", "+.facebook.com", "+.twitter.com", "+.youtube.com", "+.xn--ngstr-lra8j.com", "+.google.cn", "+.googleapis.cn", "+.googleapis.com", "+.gvt1.com"]
+  fake-ip-filter: ["*.lan", "stun.*.*.*", "stun.*.*", time.windows.com, time.nist.gov, time.apple.com, time.asia.apple.com, "*.ntp.org.cn", "*.openwrt.pool.ntp.org", time1.cloud.tencent.com, time.ustc.edu.cn, pool.ntp.org, ntp.ubuntu.com, ntp.aliyun.com, ntp1.aliyun.com, ntp2.aliyun.com, ntp3.aliyun.com, ntp4.aliyun.com, ntp5.aliyun.com, ntp6.aliyun.com, ntp7.aliyun.com, time1.aliyun.com, time2.aliyun.com, time3.aliyun.com, time4.aliyun.com, time5.aliyun.com, time6.aliyun.com, time7.aliyun.com, "*.time.edu.cn", time1.apple.com, time2.apple.com, time3.apple.com, time4.apple.com, time5.apple.com, time6.apple.com, time7.apple.com, time1.google.com, time2.google.com, time3.google.com, time4.google.com, music.163.com, "*.music.163.com", "*.126.net", musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, "*.kuwo.cn", api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, "*.y.qq.com", streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, "*.xiami.com", "*.music.migu.cn", music.migu.cn, "*.msftconnecttest.com", "*.msftncsi.com", localhost.ptlogin2.qq.com, "*.*.*.srv.nintendo.net", "*.*.stun.playstation.net", "xbox.*.*.microsoft.com", "*.ipv6.microsoft.com", "*.*.xboxlive.com", speedtest.cros.wr.pvp.net]
+profile:
+  store-selected: true
+  store-fake-ip: false
+sniffer:
+  enable: true
+  parse-pure-ip: true
+  sniff:
+    TLS:
+      ports: [443, 8443]
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    QUIC:
+      ports: [443, 8443]
+proxies:
+  - name: "🇸🇬 IPLC-gRPC｜AI-Prime [1.0]"
+    type: trojan
+    server: gtm-6wr2p27i310-ng.gocmydns.com
+    port: 764
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇭🇰 IPLC-gRPC｜HongKong [1.0][家寬][Gemini]"
+    type: trojan
+    server: gtm-6wr2p27i310-ng.gocmydns.com
+    port: 768
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇯🇵 IPLC-gRPC｜Japan [1.0][原生]"
+    type: trojan
+    server: gtm-6wr2p27i310-ng.gocmydns.com
+    port: 769
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇯🇵 IPLC-gRPC｜JP Game&Media [1.0][家寬][限速]"
+    type: trojan
+    server: gtm-6wr2p27i310-ng.gocmydns.com
+    port: 762
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇰🇷 IPLC-gRPC｜Korea [1.0][原生]"
+    type: trojan
+    server: gtm-6wr2p27i310-ng.gocmydns.com
+    port: 763
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇼🇸 IPLC-gRPC｜Taiwan [1.0][家寬]"
+    type: trojan
+    server: gtm-6wr2p27i310-ng.gocmydns.com
+    port: 767
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 IPLC-gRPC｜USA [1.0][原生]"
+    type: trojan
+    server: gtm-6wr2p27i310-ng.gocmydns.com
+    port: 766
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇸🇬 IPLC｜AI-Prime [G;-2.0][GPT]"
+    type: ssr
+    server: doedge-2ccfa7b056991647a0a00bbe3c8c31a8eb7fa3e17be76c7dc0eab127e2b88471ed455902e01a769f2b331e0519d71955.sev.cloudfront.net
+    port: 764
+    cipher: rc4-md5
+    password: caomeijump.com
+    udp: true
+    obfs: http_simple
+    obfs-param: ajax.microsoft.com
+    obfsparam: ajax.microsoft.com
+    protocol: auth_aes128_md5
+    protocol-param: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+    protocolparam: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+  - name: "🇭🇰 IPLC｜HongKong [G;-2.0][家寬][Gemini]"
+    type: ssr
+    server: doedge-2ccfa7b056991647a0a00bbe3c8c31a8eb7fa3e17be76c7dc0eab127e2b88471791472df2b58a4d91b46a239de2e4576.sev.cloudfront.net
+    port: 768
+    cipher: rc4-md5
+    password: caomeijump.com
+    udp: true
+    obfs: http_simple
+    obfs-param: ajax.microsoft.com
+    obfsparam: ajax.microsoft.com
+    protocol: auth_aes128_md5
+    protocol-param: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+    protocolparam: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+  - name: "🇯🇵 IPLC｜Japan [G;-2.0][原生]"
+    type: ssr
+    server: doedge-2ccfa7b056991647a0a00bbe3c8c31a8eb7fa3e17be76c7dc0eab127e2b884718fc57134abd912bb5247674041b66108.sev.cloudfront.net
+    port: 769
+    cipher: rc4-md5
+    password: caomeijump.com
+    udp: true
+    obfs: http_simple
+    obfs-param: ajax.microsoft.com
+    obfsparam: ajax.microsoft.com
+    protocol: auth_aes128_md5
+    protocol-param: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+    protocolparam: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+  - name: "🇯🇵 IPLC｜JP Game&Media [G;-3.0][家寬][限速]"
+    type: ssr
+    server: doedge-2ccfa7b056991647a0a00bbe3c8c31a8eb7fa3e17be76c7dc0eab127e2b88471335a7f16453bda1c6d00a4a13ae600a1.sev.cloudfront.net
+    port: 762
+    cipher: rc4-md5
+    password: caomeijump.com
+    udp: true
+    obfs: http_simple
+    obfs-param: ajax.microsoft.com
+    obfsparam: ajax.microsoft.com
+    protocol: auth_aes128_md5
+    protocol-param: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+    protocolparam: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+  - name: "🇰🇷 IPLC｜Korea [G;-2.0]"
+    type: ssr
+    server: doedge-2ccfa7b056991647a0a00bbe3c8c31a8eb7fa3e17be76c7dc0eab127e2b8847121b69e416365d45d3b730e0cf52b863f.sev.cloudfront.net
+    port: 763
+    cipher: rc4-md5
+    password: caomeijump.com
+    udp: true
+    obfs: http_simple
+    obfs-param: ajax.microsoft.com
+    obfsparam: ajax.microsoft.com
+    protocol: auth_aes128_md5
+    protocol-param: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+    protocolparam: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+  - name: "🇼🇸 IPLC｜Taiwan [G;-2.0][家寬]"
+    type: ssr
+    server: doedge-2ccfa7b056991647a0a00bbe3c8c31a8eb7fa3e17be76c7dc0eab127e2b88471368cf7d804c54e7e618dfb0610337852.sev.cloudfront.net
+    port: 767
+    cipher: rc4-md5
+    password: caomeijump.com
+    udp: true
+    obfs: http_simple
+    obfs-param: ajax.microsoft.com
+    obfsparam: ajax.microsoft.com
+    protocol: auth_aes128_md5
+    protocol-param: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+    protocolparam: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+  - name: "🇺🇸 IPLC｜US-Home [G;-5.0][家寬][限速]"
+    type: ssr
+    server: doedge-2ccfa7b056991647a0a00bbe3c8c31a8eb7fa3e17be76c7dc0eab127e2b88471998e58ff49304dfa627f8b609c49b2f1.sev.cloudfront.net
+    port: 760
+    cipher: rc4-md5
+    password: caomeijump.com
+    udp: true
+    obfs: http_simple
+    obfs-param: ajax.microsoft.com
+    obfsparam: ajax.microsoft.com
+    protocol: auth_aes128_md5
+    protocol-param: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+    protocolparam: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+  - name: "🇺🇸 IPLC｜USA [G;-2.0][原生]"
+    type: ssr
+    server: doedge-2ccfa7b056991647a0a00bbe3c8c31a8eb7fa3e17be76c7dc0eab127e2b8847196fcd9aa2569d7b61a524e35046e328d.sev.cloudfront.net
+    port: 766
+    cipher: rc4-md5
+    password: caomeijump.com
+    udp: true
+    obfs: http_simple
+    obfs-param: ajax.microsoft.com
+    obfsparam: ajax.microsoft.com
+    protocol: auth_aes128_md5
+    protocol-param: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+    protocolparam: 208088:9afae63c-85c4-328d-8b4d-60927d8fb779
+  - name: "🇷🇺 特殊｜俄羅斯-A [0.5][gRPC]"
+    type: trojan
+    server: kaizen-ru-1.gocmydns.com
+    port: 669
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇷🇺 特殊｜俄羅斯-B [0.5][gRPC]"
+    type: trojan
+    server: kaizen-ru-2.gocmydns.com
+    port: 690
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇨🇦 特殊｜加拿大-A [1.0][gRPC]"
+    type: trojan
+    server: special-ca-1.gocmydns.com
+    port: 882
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇮🇳 特殊｜印度-A [1.0][gRPC]"
+    type: trojan
+    server: zhilian-in-a.gocmydns.com
+    port: 613
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇮🇳 特殊｜印度尼西亞-A [1.0][gRPC]"
+    type: trojan
+    server: zhilian-id-a.gocmydns.com
+    port: 698
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇹🇷 特殊｜土耳其-A [2.0][家寬][gRPC]"
+    type: trojan
+    server: l2-tr-a.gocmydns.com
+    port: 672
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: 特殊｜墨西哥-A [1.0][gRPC]
+    type: trojan
+    server: special-mx-a.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇧🇷 特殊｜巴西-A [3.0][gRPC]"
+    type: trojan
+    server: zhilian-br-a.gocmydns.com
+    port: 672
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇩🇪 特殊｜德國-A [1.5][gRPC]"
+    type: trojan
+    server: zhilian-de-a.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇮🇹 特殊｜意大利-A [1.0][gRPC]"
+    type: trojan
+    server: special-es-a.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇯🇵 特殊｜日本-A [2.0][gRPC][家寬]"
+    type: trojan
+    server: special-jp-a.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: 特殊｜沙特阿拉伯-A [1.0][原生]
+    type: trojan
+    server: special-sa-a.gocmydns.com
+    port: 667
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇹🇭 特殊｜泰國-A [1.0][家寬][gRPC]"
+    type: trojan
+    server: zhilian-th-a.gocmydns.com
+    port: 662
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇦🇺 特殊｜澳大利亞-A [1.5][gRPC]"
+    type: trojan
+    server: zhilian-au-a.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇲🇴 特殊｜澳門-A [2.0][gRPC]"
+    type: trojan
+    server: special-mo-a.gocmydns.com
+    port: 667
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 特殊｜美國-A [5.0][gRPC][家寬]"
+    type: trojan
+    server: special-us-a.gocmydns.com
+    port: 667
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇬🇧 特殊｜英國-A [1.5][gRPC]"
+    type: trojan
+    server: l2-uk-a.gocmydns.com
+    port: 668
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: 特殊｜荷蘭-A [1.0][gRPC]
+    type: trojan
+    server: special-nl-a.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇵🇭 特殊｜菲律宾-A [3.0][gRPC]"
+    type: trojan
+    server: special-ph-a.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇻🇳 特殊｜越南-A [1.0][gRPC]"
+    type: trojan
+    server: l2-vn-a.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇦🇪 特殊｜迪拜-A [2.0][gRPC]"
+    type: trojan
+    server: zhilian-ae-a.gocmydns.com
+    port: 446
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇦🇷 特殊｜阿根廷-A [2.0][gRPC]"
+    type: trojan
+    server: zhilian-ar-a.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇲🇾 特殊｜馬來西亞-A [2.0][原生][gRPC]"
+    type: trojan
+    server: special-my-1.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇼🇸 直連｜台灣-02 [1.0][家寬][Reality]"
+    type: trojan
+    server: kaizen-tw-2.cmycmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: academy.nvidia.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: "🇼🇸 直連｜台灣-03 [1.0][家寬][gRPC]"
+    type: trojan
+    server: kaizen-tw-3.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇼🇸 直連｜台灣-04 [1.0][家寬][Reality]"
+    type: trojan
+    server: kaizen-tw-4.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: images.apple.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: "🇼🇸 直連｜台灣-05 [1.0][家寬][Reality]"
+    type: trojan
+    server: kaizen-tw-5.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: academy.nvidia.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: "🇼🇸 直連｜台灣-06 [1.0][家寬][gRPC]"
+    type: trojan
+    server: kaizen-tw-6.paolu.co
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇼🇸 直連｜台灣-08 [1.0][家寬][gRPC]"
+    type: trojan
+    server: kaizen-tw-8.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇼🇸 直連｜台灣-10 [1.0][家寬][試用][gRPC]"
+    type: trojan
+    server: kaizen-tw-10.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇸🇬 直連｜新加坡-01 [1.0][原生][gRPC]"
+    type: trojan
+    server: kaizen-sg-01.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇸🇬 直連｜新加坡-02 [1.0][原生][gRPC]"
+    type: trojan
+    server: kaizen-sg-02.gocmydns.com
+    port: 691
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇯🇵 直連｜日本-01 [1.0][Reality][電信优化]"
+    type: trojan
+    server: kaizen-jp-1.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: images.apple.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: "🇯🇵 直連｜日本-02 [1.0][Reality]"
+    type: trojan
+    server: kaizen-jp-2.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: images.apple.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: "🇺🇸 直連｜美國-01 [1.0][Reality]"
+    type: trojan
+    server: kaizen-us-01.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: academy.nvidia.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: "🇺🇸 直連｜美國-02 [1.0][Reality]"
+    type: trojan
+    server: kaizen-us-02.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: academy.nvidia.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: "🇺🇸 直連｜美國-03 [2.0][Reality][原生]"
+    type: trojan
+    server: kaizen-us-03.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: academy.nvidia.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: "🇺🇸 直連｜美國-04 [2.0][Reality][原生]"
+    type: trojan
+    server: kaizen-us-04.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: academy.nvidia.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: "🇺🇸 直連｜美國-05 [2.0][gRPC][原生]"
+    type: trojan
+    server: kaizen-us-05.gocmydns.com
+    port: 885
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-06 [2.0][gRPC][原生]"
+    type: trojan
+    server: kaizen-us-06.gocmydns.com
+    port: 885
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-07 [1.5][gRPC]"
+    type: trojan
+    server: kaizen-us-07.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-08 [1.5][gRPC]"
+    type: trojan
+    server: kaizen-us-08.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-09 [1.5][gRPC]"
+    type: trojan
+    server: kaizen-us-09.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-10 [1.5][gRPC]"
+    type: trojan
+    server: kaizen-us-10.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-11 [1.0][gRPC]"
+    type: trojan
+    server: kaizen-us-11.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-12 [1.0][gRPC]"
+    type: trojan
+    server: kaizen-us-12.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-13 [1.5][gRPC]"
+    type: trojan
+    server: kaizen-us-13.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-14 [1.5][Reality]"
+    type: trojan
+    server: kaizen-us-14.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: academy.nvidia.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: "🇺🇸 直連｜美國-15 [1.5][gRPC]"
+    type: trojan
+    server: kaizen-us-15.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-16 [1.5][gRPC][原生]"
+    type: trojan
+    server: kaizen-us-16.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-21 [2.0][gRPC]"
+    type: trojan
+    server: kaizen-us-21.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-22 [2.0][gRPC]"
+    type: trojan
+    server: kaizen-us-22.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇺🇸 直連｜美國-23 [1.5][gRPC]"
+    type: trojan
+    server: kaizen-us-23.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇭🇰 直連｜香港-01 [1.0][家寬][gRPC]"
+    type: trojan
+    server: kaizen-hk-1.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇭🇰 直連｜香港-02 [1.0][家寬][gRPC]"
+    type: trojan
+    server: kaizen-hk-2.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇭🇰 直連｜香港-03 [1.0][gRPC][家寬]"
+    type: trojan
+    server: kaizen-hk-3.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇭🇰 直連｜香港-07 [1.0][家寬][gRPC]"
+    type: trojan
+    server: kaizen-hk-7.gocmydns.com
+    port: 667
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇭🇰 直連｜香港-08 [1.0][gRPC][家宽]"
+    type: trojan
+    server: kaizen-hk-8.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇭🇰 直連｜香港-09 [1.0][gRPC][家寬]"
+    type: trojan
+    server: kaizen-hk-9.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    udp: true
+    network: grpc
+    sni: www.zueuqnpjvcllc.co
+    alpn:
+      - h2
+    grpc-opts:
+      grpc-service-name: mm_grpc
+  - name: "🇭🇰 直連｜香港-10 [1.0][家寬][Reality]"
+    type: trojan
+    server: kaizen-hk-10.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: images.apple.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: "🇭🇰 直連｜香港-11 [1.0][家寬][試用][Reality]"
+    type: trojan
+    server: kaizen-hk-11.gocmydns.com
+    port: 443
+    password: 9afae63c-85c4-328d-8b4d-60927d8fb779cmynw
+    flow: xtls-rprx-vision
+    udp: true
+    sni: images.apple.com
+    reality-opts:
+      public-key: VQPlquZq6gtTD37RtBUJ879hwPnk8phX6DFOU3NNVFw
+      short-id: e544fe9c249dcd1e
+    client-fingerprint: chrome
+  - name: youtunice.com
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34102
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-香港01
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30001
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-香港02
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30002
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-香港03
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30003
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-香港04
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30004
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-香港05
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30005
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-香港06
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30006
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-香港07
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30007
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-香港01
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34001
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-香港02
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34002
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-香港03
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34003
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-香港04
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34004
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-香港05
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34005
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-香港06
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34006
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-香港07
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34007
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-新加坡01
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30011
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-新加坡02
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30012
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-新加坡03
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30013
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-新加坡04
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30014
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-新加坡01
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34011
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-新加坡02
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34012
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-新加坡03
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34013
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-新加坡04
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34014
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-台湾01
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30021
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-台湾02
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30022
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-台湾01
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34021
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-台湾02
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34022
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-日本01
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30041
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-日本02
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30042
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-日本03
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30043
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-日本04
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30044
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-日本01
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34041
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-日本02
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34042
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-日本03
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34043
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-日本04
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34044
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-美国01
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30031
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-美国02
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30032
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-美国03
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30033
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-美国04
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30034
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-美国01
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34031
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-美国02
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34032
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-美国03
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34033
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道1x-美国04
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34034
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线3x-英国
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30051
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道3x-英国
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34051
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线3x-澳洲
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30071
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道3x-澳洲
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34071
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线2.5x-马来西亚
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30091
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道2.5x-马来西亚
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34091
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线5x-土耳其
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30081
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道5x-土耳其
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34081
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 专线5x-阿根廷
+    type: anytls
+    server: zjzx.youtu2.top
+    port: 30082
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 高速隧道5x-阿根廷
+    type: anytls
+    server: zjsd.youtu2.top
+    port: 34082
+    password: ab4c9cf8-e578-4188-b7af-1374b20d77b4
+    udp: true
+    sni: s.dydyyd.com
+  - name: 香港HK1
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40201
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 香港HK2
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40202
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 香港HK3
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40203
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 香港HK4
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40204
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 香港HK5
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40205
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 香港HK6
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40206
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 香港HK7
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40207
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 香港HK8
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40208
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 日本JP1
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40231
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 日本JP2
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40232
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 日本JP3
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40233
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 日本JP4
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40234
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 日本JP5
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40235
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 日本JP6
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40236
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 日本JP7
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40237
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 日本JP8
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40238
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 台湾TW1
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40221
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 台湾TW2
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40222
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 台湾TW3
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40223
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 台湾TW4
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40224
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 新加坡SG1
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40211
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 新加坡SG2
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40212
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 新加坡SG3
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40213
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 新加坡SG4
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40214
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 新加坡SG5
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40215
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 新加坡SG6
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40216
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 新加坡SG7
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40217
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 新加坡SG8
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40218
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 美国US1
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40241
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 美国US2
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40242
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 美国US3
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40243
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 美国US4
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40244
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 香港HK9
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40209
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 香港HK10
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40210
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 香港HK11
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40301
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 香港HK12
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40302
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 英国UK-3倍率
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40251
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 马来西亚ML-3倍率
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40252
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 土耳其TR-5倍率
+    type: anytls
+    server: mid1.myzxdy.top
+    port: 40253
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 阿根廷AR-5倍率
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40254
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+  - name: 澳洲AU-3倍率
+    type: anytls
+    server: mid2.myzxdy.top
+    port: 40255
+    password: 0d6d99cb-2d80-4251-bbdf-e25cdaa53a68
+    udp: true
+    sni: s.hshssh.com
+proxy-groups:
+  - name: "🚀 节点选择"
+    type: select
+    proxies:
+      - ⚡ 自动选择
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+      - DIRECT
+      - REJECT
+      - "🇸🇬 IPLC-gRPC｜AI-Prime [1.0]"
+      - "🇭🇰 IPLC-gRPC｜HongKong [1.0][家寬][Gemini]"
+      - "🇯🇵 IPLC-gRPC｜Japan [1.0][原生]"
+      - "🇯🇵 IPLC-gRPC｜JP Game&Media [1.0][家寬][限速]"
+      - "🇰🇷 IPLC-gRPC｜Korea [1.0][原生]"
+      - "🇼🇸 IPLC-gRPC｜Taiwan [1.0][家寬]"
+      - "🇺🇸 IPLC-gRPC｜USA [1.0][原生]"
+      - "🇸🇬 IPLC｜AI-Prime [G;-2.0][GPT]"
+      - "🇭🇰 IPLC｜HongKong [G;-2.0][家寬][Gemini]"
+      - "🇯🇵 IPLC｜Japan [G;-2.0][原生]"
+      - "🇯🇵 IPLC｜JP Game&Media [G;-3.0][家寬][限速]"
+      - "🇰🇷 IPLC｜Korea [G;-2.0]"
+      - "🇼🇸 IPLC｜Taiwan [G;-2.0][家寬]"
+      - "🇺🇸 IPLC｜US-Home [G;-5.0][家寬][限速]"
+      - "🇺🇸 IPLC｜USA [G;-2.0][原生]"
+      - "🇷🇺 特殊｜俄羅斯-A [0.5][gRPC]"
+      - "🇷🇺 特殊｜俄羅斯-B [0.5][gRPC]"
+      - "🇨🇦 特殊｜加拿大-A [1.0][gRPC]"
+      - "🇮🇳 特殊｜印度-A [1.0][gRPC]"
+      - "🇮🇳 特殊｜印度尼西亞-A [1.0][gRPC]"
+      - "🇹🇷 特殊｜土耳其-A [2.0][家寬][gRPC]"
+      - 特殊｜墨西哥-A [1.0][gRPC]
+      - "🇧🇷 特殊｜巴西-A [3.0][gRPC]"
+      - "🇩🇪 特殊｜德國-A [1.5][gRPC]"
+      - "🇮🇹 特殊｜意大利-A [1.0][gRPC]"
+      - "🇯🇵 特殊｜日本-A [2.0][gRPC][家寬]"
+      - 特殊｜沙特阿拉伯-A [1.0][原生]
+      - "🇹🇭 特殊｜泰國-A [1.0][家寬][gRPC]"
+      - "🇦🇺 特殊｜澳大利亞-A [1.5][gRPC]"
+      - "🇲🇴 特殊｜澳門-A [2.0][gRPC]"
+      - "🇺🇸 特殊｜美國-A [5.0][gRPC][家寬]"
+      - "🇬🇧 特殊｜英國-A [1.5][gRPC]"
+      - 特殊｜荷蘭-A [1.0][gRPC]
+      - "🇵🇭 特殊｜菲律宾-A [3.0][gRPC]"
+      - "🇻🇳 特殊｜越南-A [1.0][gRPC]"
+      - "🇦🇪 特殊｜迪拜-A [2.0][gRPC]"
+      - "🇦🇷 特殊｜阿根廷-A [2.0][gRPC]"
+      - "🇲🇾 特殊｜馬來西亞-A [2.0][原生][gRPC]"
+      - "🇼🇸 直連｜台灣-02 [1.0][家寬][Reality]"
+      - "🇼🇸 直連｜台灣-03 [1.0][家寬][gRPC]"
+      - "🇼🇸 直連｜台灣-04 [1.0][家寬][Reality]"
+      - "🇼🇸 直連｜台灣-05 [1.0][家寬][Reality]"
+      - "🇼🇸 直連｜台灣-06 [1.0][家寬][gRPC]"
+      - "🇼🇸 直連｜台灣-08 [1.0][家寬][gRPC]"
+      - "🇼🇸 直連｜台灣-10 [1.0][家寬][試用][gRPC]"
+      - "🇸🇬 直連｜新加坡-01 [1.0][原生][gRPC]"
+      - "🇸🇬 直連｜新加坡-02 [1.0][原生][gRPC]"
+      - "🇯🇵 直連｜日本-01 [1.0][Reality][電信优化]"
+      - "🇯🇵 直連｜日本-02 [1.0][Reality]"
+      - "🇺🇸 直連｜美國-01 [1.0][Reality]"
+      - "🇺🇸 直連｜美國-02 [1.0][Reality]"
+      - "🇺🇸 直連｜美國-03 [2.0][Reality][原生]"
+      - "🇺🇸 直連｜美國-04 [2.0][Reality][原生]"
+      - "🇺🇸 直連｜美國-05 [2.0][gRPC][原生]"
+      - "🇺🇸 直連｜美國-06 [2.0][gRPC][原生]"
+      - "🇺🇸 直連｜美國-07 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-08 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-09 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-10 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-11 [1.0][gRPC]"
+      - "🇺🇸 直連｜美國-12 [1.0][gRPC]"
+      - "🇺🇸 直連｜美國-13 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-14 [1.5][Reality]"
+      - "🇺🇸 直連｜美國-15 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-16 [1.5][gRPC][原生]"
+      - "🇺🇸 直連｜美國-21 [2.0][gRPC]"
+      - "🇺🇸 直連｜美國-22 [2.0][gRPC]"
+      - "🇺🇸 直連｜美國-23 [1.5][gRPC]"
+      - "🇭🇰 直連｜香港-01 [1.0][家寬][gRPC]"
+      - "🇭🇰 直連｜香港-02 [1.0][家寬][gRPC]"
+      - "🇭🇰 直連｜香港-03 [1.0][gRPC][家寬]"
+      - "🇭🇰 直連｜香港-07 [1.0][家寬][gRPC]"
+      - "🇭🇰 直連｜香港-08 [1.0][gRPC][家宽]"
+      - "🇭🇰 直連｜香港-09 [1.0][gRPC][家寬]"
+      - "🇭🇰 直連｜香港-10 [1.0][家寬][Reality]"
+      - "🇭🇰 直連｜香港-11 [1.0][家寬][試用][Reality]"
+      - youtunice.com
+      - 专线2.5x-香港01
+      - 专线2.5x-香港02
+      - 专线2.5x-香港03
+      - 专线2.5x-香港04
+      - 专线2.5x-香港05
+      - 专线2.5x-香港06
+      - 专线2.5x-香港07
+      - 高速隧道1x-香港01
+      - 高速隧道1x-香港02
+      - 高速隧道1x-香港03
+      - 高速隧道1x-香港04
+      - 高速隧道1x-香港05
+      - 高速隧道1x-香港06
+      - 高速隧道1x-香港07
+      - 专线2.5x-新加坡01
+      - 专线2.5x-新加坡02
+      - 专线2.5x-新加坡03
+      - 专线2.5x-新加坡04
+      - 高速隧道1x-新加坡01
+      - 高速隧道1x-新加坡02
+      - 高速隧道1x-新加坡03
+      - 高速隧道1x-新加坡04
+      - 专线2.5x-台湾01
+      - 专线2.5x-台湾02
+      - 高速隧道1x-台湾01
+      - 高速隧道1x-台湾02
+      - 专线2.5x-日本01
+      - 专线2.5x-日本02
+      - 专线2.5x-日本03
+      - 专线2.5x-日本04
+      - 高速隧道1x-日本01
+      - 高速隧道1x-日本02
+      - 高速隧道1x-日本03
+      - 高速隧道1x-日本04
+      - 专线2.5x-美国01
+      - 专线2.5x-美国02
+      - 专线2.5x-美国03
+      - 专线2.5x-美国04
+      - 高速隧道1x-美国01
+      - 高速隧道1x-美国02
+      - 高速隧道1x-美国03
+      - 高速隧道1x-美国04
+      - 专线3x-英国
+      - 高速隧道3x-英国
+      - 专线3x-澳洲
+      - 高速隧道3x-澳洲
+      - 专线2.5x-马来西亚
+      - 高速隧道2.5x-马来西亚
+      - 专线5x-土耳其
+      - 高速隧道5x-土耳其
+      - 专线5x-阿根廷
+      - 高速隧道5x-阿根廷
+      - 香港HK1
+      - 香港HK2
+      - 香港HK3
+      - 香港HK4
+      - 香港HK5
+      - 香港HK6
+      - 香港HK7
+      - 香港HK8
+      - 日本JP1
+      - 日本JP2
+      - 日本JP3
+      - 日本JP4
+      - 日本JP5
+      - 日本JP6
+      - 日本JP7
+      - 日本JP8
+      - 台湾TW1
+      - 台湾TW2
+      - 台湾TW3
+      - 台湾TW4
+      - 新加坡SG1
+      - 新加坡SG2
+      - 新加坡SG3
+      - 新加坡SG4
+      - 新加坡SG5
+      - 新加坡SG6
+      - 新加坡SG7
+      - 新加坡SG8
+      - 美国US1
+      - 美国US2
+      - 美国US3
+      - 美国US4
+      - 香港HK9
+      - 香港HK10
+      - 香港HK11
+      - 香港HK12
+      - 英国UK-3倍率
+      - 马来西亚ML-3倍率
+      - 土耳其TR-5倍率
+      - 阿根廷AR-5倍率
+      - 澳洲AU-3倍率
+  - name: ⚡ 自动选择
+    type: url-test
+    proxies:
+      - "🇸🇬 IPLC-gRPC｜AI-Prime [1.0]"
+      - "🇭🇰 IPLC-gRPC｜HongKong [1.0][家寬][Gemini]"
+      - "🇯🇵 IPLC-gRPC｜Japan [1.0][原生]"
+      - "🇯🇵 IPLC-gRPC｜JP Game&Media [1.0][家寬][限速]"
+      - "🇰🇷 IPLC-gRPC｜Korea [1.0][原生]"
+      - "🇼🇸 IPLC-gRPC｜Taiwan [1.0][家寬]"
+      - "🇺🇸 IPLC-gRPC｜USA [1.0][原生]"
+      - "🇸🇬 IPLC｜AI-Prime [G;-2.0][GPT]"
+      - "🇭🇰 IPLC｜HongKong [G;-2.0][家寬][Gemini]"
+      - "🇯🇵 IPLC｜Japan [G;-2.0][原生]"
+      - "🇯🇵 IPLC｜JP Game&Media [G;-3.0][家寬][限速]"
+      - "🇰🇷 IPLC｜Korea [G;-2.0]"
+      - "🇼🇸 IPLC｜Taiwan [G;-2.0][家寬]"
+      - "🇺🇸 IPLC｜US-Home [G;-5.0][家寬][限速]"
+      - "🇺🇸 IPLC｜USA [G;-2.0][原生]"
+      - "🇷🇺 特殊｜俄羅斯-A [0.5][gRPC]"
+      - "🇷🇺 特殊｜俄羅斯-B [0.5][gRPC]"
+      - "🇨🇦 特殊｜加拿大-A [1.0][gRPC]"
+      - "🇮🇳 特殊｜印度-A [1.0][gRPC]"
+      - "🇮🇳 特殊｜印度尼西亞-A [1.0][gRPC]"
+      - "🇹🇷 特殊｜土耳其-A [2.0][家寬][gRPC]"
+      - 特殊｜墨西哥-A [1.0][gRPC]
+      - "🇧🇷 特殊｜巴西-A [3.0][gRPC]"
+      - "🇩🇪 特殊｜德國-A [1.5][gRPC]"
+      - "🇮🇹 特殊｜意大利-A [1.0][gRPC]"
+      - "🇯🇵 特殊｜日本-A [2.0][gRPC][家寬]"
+      - 特殊｜沙特阿拉伯-A [1.0][原生]
+      - "🇹🇭 特殊｜泰國-A [1.0][家寬][gRPC]"
+      - "🇦🇺 特殊｜澳大利亞-A [1.5][gRPC]"
+      - "🇲🇴 特殊｜澳門-A [2.0][gRPC]"
+      - "🇺🇸 特殊｜美國-A [5.0][gRPC][家寬]"
+      - "🇬🇧 特殊｜英國-A [1.5][gRPC]"
+      - 特殊｜荷蘭-A [1.0][gRPC]
+      - "🇵🇭 特殊｜菲律宾-A [3.0][gRPC]"
+      - "🇻🇳 特殊｜越南-A [1.0][gRPC]"
+      - "🇦🇪 特殊｜迪拜-A [2.0][gRPC]"
+      - "🇦🇷 特殊｜阿根廷-A [2.0][gRPC]"
+      - "🇲🇾 特殊｜馬來西亞-A [2.0][原生][gRPC]"
+      - "🇼🇸 直連｜台灣-02 [1.0][家寬][Reality]"
+      - "🇼🇸 直連｜台灣-03 [1.0][家寬][gRPC]"
+      - "🇼🇸 直連｜台灣-04 [1.0][家寬][Reality]"
+      - "🇼🇸 直連｜台灣-05 [1.0][家寬][Reality]"
+      - "🇼🇸 直連｜台灣-06 [1.0][家寬][gRPC]"
+      - "🇼🇸 直連｜台灣-08 [1.0][家寬][gRPC]"
+      - "🇼🇸 直連｜台灣-10 [1.0][家寬][試用][gRPC]"
+      - "🇸🇬 直連｜新加坡-01 [1.0][原生][gRPC]"
+      - "🇸🇬 直連｜新加坡-02 [1.0][原生][gRPC]"
+      - "🇯🇵 直連｜日本-01 [1.0][Reality][電信优化]"
+      - "🇯🇵 直連｜日本-02 [1.0][Reality]"
+      - "🇺🇸 直連｜美國-01 [1.0][Reality]"
+      - "🇺🇸 直連｜美國-02 [1.0][Reality]"
+      - "🇺🇸 直連｜美國-03 [2.0][Reality][原生]"
+      - "🇺🇸 直連｜美國-04 [2.0][Reality][原生]"
+      - "🇺🇸 直連｜美國-05 [2.0][gRPC][原生]"
+      - "🇺🇸 直連｜美國-06 [2.0][gRPC][原生]"
+      - "🇺🇸 直連｜美國-07 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-08 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-09 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-10 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-11 [1.0][gRPC]"
+      - "🇺🇸 直連｜美國-12 [1.0][gRPC]"
+      - "🇺🇸 直連｜美國-13 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-14 [1.5][Reality]"
+      - "🇺🇸 直連｜美國-15 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-16 [1.5][gRPC][原生]"
+      - "🇺🇸 直連｜美國-21 [2.0][gRPC]"
+      - "🇺🇸 直連｜美國-22 [2.0][gRPC]"
+      - "🇺🇸 直連｜美國-23 [1.5][gRPC]"
+      - "🇭🇰 直連｜香港-01 [1.0][家寬][gRPC]"
+      - "🇭🇰 直連｜香港-02 [1.0][家寬][gRPC]"
+      - "🇭🇰 直連｜香港-03 [1.0][gRPC][家寬]"
+      - "🇭🇰 直連｜香港-07 [1.0][家寬][gRPC]"
+      - "🇭🇰 直連｜香港-08 [1.0][gRPC][家宽]"
+      - "🇭🇰 直連｜香港-09 [1.0][gRPC][家寬]"
+      - "🇭🇰 直連｜香港-10 [1.0][家寬][Reality]"
+      - "🇭🇰 直連｜香港-11 [1.0][家寬][試用][Reality]"
+      - youtunice.com
+      - 专线2.5x-香港01
+      - 专线2.5x-香港02
+      - 专线2.5x-香港03
+      - 专线2.5x-香港04
+      - 专线2.5x-香港05
+      - 专线2.5x-香港06
+      - 专线2.5x-香港07
+      - 高速隧道1x-香港01
+      - 高速隧道1x-香港02
+      - 高速隧道1x-香港03
+      - 高速隧道1x-香港04
+      - 高速隧道1x-香港05
+      - 高速隧道1x-香港06
+      - 高速隧道1x-香港07
+      - 专线2.5x-新加坡01
+      - 专线2.5x-新加坡02
+      - 专线2.5x-新加坡03
+      - 专线2.5x-新加坡04
+      - 高速隧道1x-新加坡01
+      - 高速隧道1x-新加坡02
+      - 高速隧道1x-新加坡03
+      - 高速隧道1x-新加坡04
+      - 专线2.5x-台湾01
+      - 专线2.5x-台湾02
+      - 高速隧道1x-台湾01
+      - 高速隧道1x-台湾02
+      - 专线2.5x-日本01
+      - 专线2.5x-日本02
+      - 专线2.5x-日本03
+      - 专线2.5x-日本04
+      - 高速隧道1x-日本01
+      - 高速隧道1x-日本02
+      - 高速隧道1x-日本03
+      - 高速隧道1x-日本04
+      - 专线2.5x-美国01
+      - 专线2.5x-美国02
+      - 专线2.5x-美国03
+      - 专线2.5x-美国04
+      - 高速隧道1x-美国01
+      - 高速隧道1x-美国02
+      - 高速隧道1x-美国03
+      - 高速隧道1x-美国04
+      - 专线3x-英国
+      - 高速隧道3x-英国
+      - 专线3x-澳洲
+      - 高速隧道3x-澳洲
+      - 专线2.5x-马来西亚
+      - 高速隧道2.5x-马来西亚
+      - 专线5x-土耳其
+      - 高速隧道5x-土耳其
+      - 专线5x-阿根廷
+      - 高速隧道5x-阿根廷
+      - 香港HK1
+      - 香港HK2
+      - 香港HK3
+      - 香港HK4
+      - 香港HK5
+      - 香港HK6
+      - 香港HK7
+      - 香港HK8
+      - 日本JP1
+      - 日本JP2
+      - 日本JP3
+      - 日本JP4
+      - 日本JP5
+      - 日本JP6
+      - 日本JP7
+      - 日本JP8
+      - 台湾TW1
+      - 台湾TW2
+      - 台湾TW3
+      - 台湾TW4
+      - 新加坡SG1
+      - 新加坡SG2
+      - 新加坡SG3
+      - 新加坡SG4
+      - 新加坡SG5
+      - 新加坡SG6
+      - 新加坡SG7
+      - 新加坡SG8
+      - 美国US1
+      - 美国US2
+      - 美国US3
+      - 美国US4
+      - 香港HK9
+      - 香港HK10
+      - 香港HK11
+      - 香港HK12
+      - 英国UK-3倍率
+      - 马来西亚ML-3倍率
+      - 土耳其TR-5倍率
+      - 阿根廷AR-5倍率
+      - 澳洲AU-3倍率
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    lazy: false
+    tolerance: 50
+  - name: "🛑 广告拦截"
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - "🚀 节点选择"
+  - name: "🤖 AI 服务"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "📹 油管视频"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🔍 谷歌服务"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🍏 苹果服务"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "📲 电报消息"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🐦 推特/X"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "📘 Meta 系"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🎙️ Discord"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "💬 其他社交"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🎬 奈飞"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🏰 迪士尼+"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "📺 欧美流媒体"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🎌 亚洲流媒体"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🎮 Steam"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🖥️ PC 游戏"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🎯 主机游戏"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🐱 代码托管"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: ☁️ 云服务
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🛠️ 开发工具"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "💾 网盘存储"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "💳 支付平台"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: ₿ 加密货币
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "📚 教育学术"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "📰 新闻资讯"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🛒 海淘购物"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🏠 私有网络"
+    type: select
+    proxies:
+      - DIRECT
+      - REJECT
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🔒 国内服务"
+    type: select
+    proxies:
+      - DIRECT
+      - REJECT
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🌍 非中国"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🐟 漏网之鱼"
+    type: select
+    proxies:
+      - "🚀 节点选择"
+      - ⚡ 自动选择
+      - DIRECT
+      - REJECT
+      - "🇭🇰 香港"
+      - "🇲🇴 澳门"
+      - "🇹🇼 台湾"
+      - "🇯🇵 日本"
+      - "🇸🇬 新加坡"
+      - "🇺🇸 美国"
+      - "🇰🇷 韩国"
+      - "🇬🇧 英国"
+      - "🇩🇪 德国"
+      - "🇳🇱 荷兰"
+      - "🇨🇦 加拿大"
+      - "🇦🇺 澳大利亚"
+      - "🇲🇾 马来西亚"
+      - "🇹🇭 泰国"
+      - "🇵🇭 菲律宾"
+      - "🇮🇳 印度"
+      - "🇻🇳 越南"
+      - "🇹🇷 土耳其"
+      - "🇦🇷 阿根廷"
+      - "🇧🇷 巴西"
+      - "🇲🇽 墨西哥"
+      - "🇷🇺 俄罗斯"
+      - "🌍 其他地区"
+  - name: "🇭🇰 香港"
+    type: select
+    proxies:
+      - "🇭🇰 IPLC-gRPC｜HongKong [1.0][家寬][Gemini]"
+      - "🇭🇰 IPLC｜HongKong [G;-2.0][家寬][Gemini]"
+      - "🇭🇰 直連｜香港-01 [1.0][家寬][gRPC]"
+      - "🇭🇰 直連｜香港-02 [1.0][家寬][gRPC]"
+      - "🇭🇰 直連｜香港-03 [1.0][gRPC][家寬]"
+      - "🇭🇰 直連｜香港-07 [1.0][家寬][gRPC]"
+      - "🇭🇰 直連｜香港-08 [1.0][gRPC][家宽]"
+      - "🇭🇰 直連｜香港-09 [1.0][gRPC][家寬]"
+      - "🇭🇰 直連｜香港-10 [1.0][家寬][Reality]"
+      - "🇭🇰 直連｜香港-11 [1.0][家寬][試用][Reality]"
+      - 专线2.5x-香港01
+      - 专线2.5x-香港02
+      - 专线2.5x-香港03
+      - 专线2.5x-香港04
+      - 专线2.5x-香港05
+      - 专线2.5x-香港06
+      - 专线2.5x-香港07
+      - 高速隧道1x-香港01
+      - 高速隧道1x-香港02
+      - 高速隧道1x-香港03
+      - 高速隧道1x-香港04
+      - 高速隧道1x-香港05
+      - 高速隧道1x-香港06
+      - 高速隧道1x-香港07
+      - 香港HK1
+      - 香港HK2
+      - 香港HK3
+      - 香港HK4
+      - 香港HK5
+      - 香港HK6
+      - 香港HK7
+      - 香港HK8
+      - 香港HK9
+      - 香港HK10
+      - 香港HK11
+      - 香港HK12
+  - name: "🇲🇴 澳门"
+    type: select
+    proxies:
+      - "🇲🇴 特殊｜澳門-A [2.0][gRPC]"
+  - name: "🇹🇼 台湾"
+    type: select
+    proxies:
+      - "🇼🇸 IPLC-gRPC｜Taiwan [1.0][家寬]"
+      - "🇼🇸 IPLC｜Taiwan [G;-2.0][家寬]"
+      - "🇼🇸 直連｜台灣-02 [1.0][家寬][Reality]"
+      - "🇼🇸 直連｜台灣-03 [1.0][家寬][gRPC]"
+      - "🇼🇸 直連｜台灣-04 [1.0][家寬][Reality]"
+      - "🇼🇸 直連｜台灣-05 [1.0][家寬][Reality]"
+      - "🇼🇸 直連｜台灣-06 [1.0][家寬][gRPC]"
+      - "🇼🇸 直連｜台灣-08 [1.0][家寬][gRPC]"
+      - "🇼🇸 直連｜台灣-10 [1.0][家寬][試用][gRPC]"
+      - 专线2.5x-台湾01
+      - 专线2.5x-台湾02
+      - 高速隧道1x-台湾01
+      - 高速隧道1x-台湾02
+      - 台湾TW1
+      - 台湾TW2
+      - 台湾TW3
+      - 台湾TW4
+  - name: "🇯🇵 日本"
+    type: select
+    proxies:
+      - "🇯🇵 IPLC-gRPC｜Japan [1.0][原生]"
+      - "🇯🇵 IPLC-gRPC｜JP Game&Media [1.0][家寬][限速]"
+      - "🇯🇵 IPLC｜Japan [G;-2.0][原生]"
+      - "🇯🇵 IPLC｜JP Game&Media [G;-3.0][家寬][限速]"
+      - "🇯🇵 特殊｜日本-A [2.0][gRPC][家寬]"
+      - "🇯🇵 直連｜日本-01 [1.0][Reality][電信优化]"
+      - "🇯🇵 直連｜日本-02 [1.0][Reality]"
+      - 专线2.5x-日本01
+      - 专线2.5x-日本02
+      - 专线2.5x-日本03
+      - 专线2.5x-日本04
+      - 高速隧道1x-日本01
+      - 高速隧道1x-日本02
+      - 高速隧道1x-日本03
+      - 高速隧道1x-日本04
+      - 日本JP1
+      - 日本JP2
+      - 日本JP3
+      - 日本JP4
+      - 日本JP5
+      - 日本JP6
+      - 日本JP7
+      - 日本JP8
+  - name: "🇸🇬 新加坡"
+    type: select
+    proxies:
+      - "🇸🇬 直連｜新加坡-01 [1.0][原生][gRPC]"
+      - "🇸🇬 直連｜新加坡-02 [1.0][原生][gRPC]"
+      - 专线2.5x-新加坡01
+      - 专线2.5x-新加坡02
+      - 专线2.5x-新加坡03
+      - 专线2.5x-新加坡04
+      - 高速隧道1x-新加坡01
+      - 高速隧道1x-新加坡02
+      - 高速隧道1x-新加坡03
+      - 高速隧道1x-新加坡04
+      - 新加坡SG1
+      - 新加坡SG2
+      - 新加坡SG3
+      - 新加坡SG4
+      - 新加坡SG5
+      - 新加坡SG6
+      - 新加坡SG7
+      - 新加坡SG8
+  - name: "🇺🇸 美国"
+    type: select
+    proxies:
+      - "🇺🇸 IPLC-gRPC｜USA [1.0][原生]"
+      - "🇺🇸 IPLC｜US-Home [G;-5.0][家寬][限速]"
+      - "🇺🇸 IPLC｜USA [G;-2.0][原生]"
+      - "🇺🇸 特殊｜美國-A [5.0][gRPC][家寬]"
+      - "🇺🇸 直連｜美國-01 [1.0][Reality]"
+      - "🇺🇸 直連｜美國-02 [1.0][Reality]"
+      - "🇺🇸 直連｜美國-03 [2.0][Reality][原生]"
+      - "🇺🇸 直連｜美國-04 [2.0][Reality][原生]"
+      - "🇺🇸 直連｜美國-05 [2.0][gRPC][原生]"
+      - "🇺🇸 直連｜美國-06 [2.0][gRPC][原生]"
+      - "🇺🇸 直連｜美國-07 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-08 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-09 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-10 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-11 [1.0][gRPC]"
+      - "🇺🇸 直連｜美國-12 [1.0][gRPC]"
+      - "🇺🇸 直連｜美國-13 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-14 [1.5][Reality]"
+      - "🇺🇸 直連｜美國-15 [1.5][gRPC]"
+      - "🇺🇸 直連｜美國-16 [1.5][gRPC][原生]"
+      - "🇺🇸 直連｜美國-21 [2.0][gRPC]"
+      - "🇺🇸 直連｜美國-22 [2.0][gRPC]"
+      - "🇺🇸 直連｜美國-23 [1.5][gRPC]"
+      - 专线2.5x-美国01
+      - 专线2.5x-美国02
+      - 专线2.5x-美国03
+      - 专线2.5x-美国04
+      - 高速隧道1x-美国01
+      - 高速隧道1x-美国02
+      - 高速隧道1x-美国03
+      - 高速隧道1x-美国04
+      - 美国US1
+      - 美国US2
+      - 美国US3
+      - 美国US4
+  - name: "🇰🇷 韩国"
+    type: select
+    proxies:
+      - "🇰🇷 IPLC-gRPC｜Korea [1.0][原生]"
+      - "🇰🇷 IPLC｜Korea [G;-2.0]"
+  - name: "🇬🇧 英国"
+    type: select
+    proxies:
+      - "🇬🇧 特殊｜英國-A [1.5][gRPC]"
+      - 专线3x-英国
+      - 高速隧道3x-英国
+      - 英国UK-3倍率
+  - name: "🇩🇪 德国"
+    type: select
+    proxies:
+      - "🇩🇪 特殊｜德國-A [1.5][gRPC]"
+  - name: "🇳🇱 荷兰"
+    type: select
+    proxies:
+      - 特殊｜荷蘭-A [1.0][gRPC]
+  - name: "🇨🇦 加拿大"
+    type: select
+    proxies:
+      - "🇨🇦 特殊｜加拿大-A [1.0][gRPC]"
+  - name: "🇦🇺 澳大利亚"
+    type: select
+    proxies:
+      - "🇦🇺 特殊｜澳大利亞-A [1.5][gRPC]"
+      - 专线3x-澳洲
+      - 高速隧道3x-澳洲
+      - 澳洲AU-3倍率
+  - name: "🇲🇾 马来西亚"
+    type: select
+    proxies:
+      - "🇲🇾 特殊｜馬來西亞-A [2.0][原生][gRPC]"
+      - 专线2.5x-马来西亚
+      - 高速隧道2.5x-马来西亚
+      - 马来西亚ML-3倍率
+  - name: "🇹🇭 泰国"
+    type: select
+    proxies:
+      - "🇹🇭 特殊｜泰國-A [1.0][家寬][gRPC]"
+  - name: "🇵🇭 菲律宾"
+    type: select
+    proxies:
+      - "🇵🇭 特殊｜菲律宾-A [3.0][gRPC]"
+  - name: "🇮🇳 印度"
+    type: select
+    proxies:
+      - "🇮🇳 特殊｜印度-A [1.0][gRPC]"
+      - "🇮🇳 特殊｜印度尼西亞-A [1.0][gRPC]"
+  - name: "🇻🇳 越南"
+    type: select
+    proxies:
+      - "🇻🇳 特殊｜越南-A [1.0][gRPC]"
+  - name: "🇹🇷 土耳其"
+    type: select
+    proxies:
+      - "🇹🇷 特殊｜土耳其-A [2.0][家寬][gRPC]"
+      - 专线5x-土耳其
+      - 高速隧道5x-土耳其
+      - 土耳其TR-5倍率
+  - name: "🇦🇷 阿根廷"
+    type: select
+    proxies:
+      - "🇦🇷 特殊｜阿根廷-A [2.0][gRPC]"
+      - 专线5x-阿根廷
+      - 高速隧道5x-阿根廷
+      - 阿根廷AR-5倍率
+  - name: "🇧🇷 巴西"
+    type: select
+    proxies:
+      - "🇧🇷 特殊｜巴西-A [3.0][gRPC]"
+  - name: "🇲🇽 墨西哥"
+    type: select
+    proxies:
+      - 特殊｜墨西哥-A [1.0][gRPC]
+  - name: "🇷🇺 俄罗斯"
+    type: select
+    proxies:
+      - "🇷🇺 特殊｜俄羅斯-A [0.5][gRPC]"
+      - "🇷🇺 特殊｜俄羅斯-B [0.5][gRPC]"
+  - name: "🌍 其他地区"
+    type: select
+    proxies:
+      - "🇸🇬 IPLC-gRPC｜AI-Prime [1.0]"
+      - "🇸🇬 IPLC｜AI-Prime [G;-2.0][GPT]"
+      - "🇮🇹 特殊｜意大利-A [1.0][gRPC]"
+      - 特殊｜沙特阿拉伯-A [1.0][原生]
+      - "🇦🇪 特殊｜迪拜-A [2.0][gRPC]"
+      - youtunice.com
+rule-providers:
+  abema:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/abema.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/abema.mrs
+  amazon:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/amazon.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/amazon.mrs
+  anthropic:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/anthropic.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/anthropic.mrs
+  apple:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/apple.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/apple.mrs
+  apple-tvplus:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/apple-tvplus.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/apple-tvplus.mrs
+  atlassian:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/atlassian.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/atlassian.mrs
+  aws:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/aws.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/aws.mrs
+  azure:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/azure.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/azure.mrs
+  bahamut:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/bahamut.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/bahamut.mrs
+  bbc:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/bbc.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/bbc.mrs
+  biliintl:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/biliintl.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/biliintl.mrs
+  binance:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/binance.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/binance.mrs
+  blizzard:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/blizzard.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/blizzard.mrs
+  bloomberg:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/bloomberg.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/bloomberg.mrs
+  category-ads-all:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/category-ads-all.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ads-all.mrs
+  category-ai-chat-!cn:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/category-ai-chat-!cn.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-ai-chat-!cn.mrs
+  category-scholar-!cn:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/category-scholar-!cn.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/category-scholar-!cn.mrs
+  cloudflare:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/cloudflare.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cloudflare.mrs
+  cloudflare-ip:
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    path: ./ruleset/cloudflare-ip.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cloudflare.mrs
+  cn:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/cn.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cn.mrs
+  cn-ip:
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    path: ./ruleset/cn-ip.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/cn.mrs
+  cnn:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/cnn.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/cnn.mrs
+  coursera:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/coursera.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/coursera.mrs
+  dazn:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/dazn.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/dazn.mrs
+  digitalocean:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/digitalocean.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/digitalocean.mrs
+  discord:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/discord.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/discord.mrs
+  disney:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/disney.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/disney.mrs
+  docker:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/docker.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/docker.mrs
+  dropbox:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/dropbox.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/dropbox.mrs
+  ea:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/ea.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/ea.mrs
+  ebay:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/ebay.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/ebay.mrs
+  edx:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/edx.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/edx.mrs
+  epicgames:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/epicgames.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/epicgames.mrs
+  facebook:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/facebook.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/facebook.mrs
+  facebook-ip:
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    path: ./ruleset/facebook-ip.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/facebook.mrs
+  geolocation-!cn:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/geolocation-!cn.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/geolocation-!cn.mrs
+  geolocation-cn:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/geolocation-cn.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/geolocation-cn.mrs
+  github:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/github.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/github.mrs
+  gitlab:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/gitlab.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/gitlab.mrs
+  gog:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/gog.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/gog.mrs
+  google:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/google.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google.mrs
+  google-ip:
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    path: ./ruleset/google-ip.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/google.mrs
+  hbo:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/hbo.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/hbo.mrs
+  hulu:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/hulu.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/hulu.mrs
+  icloud:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/icloud.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/icloud.mrs
+  instagram:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/instagram.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/instagram.mrs
+  jetbrains:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/jetbrains.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/jetbrains.mrs
+  khanacademy:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/khanacademy.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/khanacademy.mrs
+  kktv:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/kktv.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/kktv.mrs
+  line:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/line.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/line.mrs
+  linkedin:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/linkedin.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/linkedin.mrs
+  microsoft:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/microsoft.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/microsoft.mrs
+  netflix:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/netflix.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/netflix.mrs
+  netflix-ip:
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    path: ./ruleset/netflix-ip.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/netflix.mrs
+  netlify:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/netlify.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/netlify.mrs
+  niconico:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/niconico.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/niconico.mrs
+  nintendo:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/nintendo.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/nintendo.mrs
+  notion:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/notion.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/notion.mrs
+  npmjs:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/npmjs.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/npmjs.mrs
+  nytimes:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/nytimes.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/nytimes.mrs
+  onedrive:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/onedrive.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/onedrive.mrs
+  openai:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/openai.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/openai.mrs
+  paypal:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/paypal.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/paypal.mrs
+  pinterest:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/pinterest.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/pinterest.mrs
+  playstation:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/playstation.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/playstation.mrs
+  primevideo:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/primevideo.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/primevideo.mrs
+  private:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/private.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/private.mrs
+  private-ip:
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    path: ./ruleset/private-ip.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/private.mrs
+  reddit:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/reddit.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/reddit.mrs
+  riot:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/riot.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/riot.mrs
+  snap:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/snap.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/snap.mrs
+  spotify:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/spotify.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/spotify.mrs
+  stackexchange:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/stackexchange.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/stackexchange.mrs
+  steam:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/steam.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/steam.mrs
+  stripe:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/stripe.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/stripe.mrs
+  telegram:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/telegram.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/telegram.mrs
+  telegram-ip:
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    path: ./ruleset/telegram-ip.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/telegram.mrs
+  tiktok:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/tiktok.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/tiktok.mrs
+  tumblr:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/tumblr.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/tumblr.mrs
+  twitch:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/twitch.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/twitch.mrs
+  twitter:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/twitter.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/twitter.mrs
+  twitter-ip:
+    behavior: ipcidr
+    format: mrs
+    interval: 86400
+    path: ./ruleset/twitter-ip.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geoip/twitter.mrs
+  ubisoft:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/ubisoft.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/ubisoft.mrs
+  udemy:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/udemy.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/udemy.mrs
+  vercel:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/vercel.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/vercel.mrs
+  viu:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/viu.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/viu.mrs
+  whatsapp:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/whatsapp.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/whatsapp.mrs
+  wikimedia:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/wikimedia.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/wikimedia.mrs
+  wise:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/wise.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/wise.mrs
+  wsj:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/wsj.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/wsj.mrs
+  xbox:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/xbox.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/xbox.mrs
+  youtube:
+    behavior: domain
+    format: mrs
+    interval: 86400
+    path: ./ruleset/youtube.mrs
+    type: http
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/youtube.mrs
+rules:
+  - "RULE-SET,category-ads-all,🛑 广告拦截"
+  - "RULE-SET,private,🏠 私有网络"
+  - "RULE-SET,private-ip,🏠 私有网络,no-resolve"
+  - "RULE-SET,openai,🤖 AI 服务"
+  - "RULE-SET,anthropic,🤖 AI 服务"
+  - "RULE-SET,category-ai-chat-!cn,🤖 AI 服务"
+  - "RULE-SET,geolocation-cn,🔒 国内服务"
+  - "RULE-SET,cn-ip,🔒 国内服务,no-resolve"
+  - "RULE-SET,youtube,📹 油管视频"
+  - "RULE-SET,category-scholar-!cn,📚 教育学术"
+  - "RULE-SET,coursera,📚 教育学术"
+  - "RULE-SET,udemy,📚 教育学术"
+  - "RULE-SET,edx,📚 教育学术"
+  - "RULE-SET,khanacademy,📚 教育学术"
+  - "RULE-SET,wikimedia,📚 教育学术"
+  - RULE-SET,aws,☁️ 云服务
+  - RULE-SET,azure,☁️ 云服务
+  - RULE-SET,cloudflare,☁️ 云服务
+  - RULE-SET,digitalocean,☁️ 云服务
+  - RULE-SET,vercel,☁️ 云服务
+  - RULE-SET,netlify,☁️ 云服务
+  - RULE-SET,cloudflare-ip,☁️ 云服务,no-resolve
+  - "RULE-SET,google,🔍 谷歌服务"
+  - "RULE-SET,google-ip,🔍 谷歌服务,no-resolve"
+  - "RULE-SET,telegram,📲 电报消息"
+  - "RULE-SET,telegram-ip,📲 电报消息,no-resolve"
+  - "RULE-SET,github,🐱 代码托管"
+  - "RULE-SET,gitlab,🐱 代码托管"
+  - "RULE-SET,atlassian,🐱 代码托管"
+  - RULE-SET,microsoft,Ⓜ️ 微软服务
+  - RULE-SET,onedrive,Ⓜ️ 微软服务
+  - "RULE-SET,apple-tvplus,📺 欧美流媒体"
+  - "RULE-SET,apple,🍏 苹果服务"
+  - "RULE-SET,icloud,🍏 苹果服务"
+  - "RULE-SET,twitter,🐦 推特/X"
+  - "RULE-SET,twitter-ip,🐦 推特/X,no-resolve"
+  - "RULE-SET,facebook,📘 Meta 系"
+  - "RULE-SET,instagram,📘 Meta 系"
+  - "RULE-SET,whatsapp,📘 Meta 系"
+  - "RULE-SET,facebook-ip,📘 Meta 系,no-resolve"
+  - "RULE-SET,discord,🎙️ Discord"
+  - "RULE-SET,tiktok,💬 其他社交"
+  - "RULE-SET,line,💬 其他社交"
+  - "RULE-SET,reddit,💬 其他社交"
+  - "RULE-SET,linkedin,💬 其他社交"
+  - "RULE-SET,snap,💬 其他社交"
+  - "RULE-SET,pinterest,💬 其他社交"
+  - "RULE-SET,tumblr,💬 其他社交"
+  - "RULE-SET,netflix,🎬 奈飞"
+  - "RULE-SET,netflix-ip,🎬 奈飞,no-resolve"
+  - "RULE-SET,disney,🏰 迪士尼+"
+  - "RULE-SET,hbo,📺 欧美流媒体"
+  - "RULE-SET,hulu,📺 欧美流媒体"
+  - "RULE-SET,primevideo,📺 欧美流媒体"
+  - "RULE-SET,spotify,📺 欧美流媒体"
+  - "RULE-SET,twitch,📺 欧美流媒体"
+  - "RULE-SET,dazn,📺 欧美流媒体"
+  - "RULE-SET,bahamut,🎌 亚洲流媒体"
+  - "RULE-SET,biliintl,🎌 亚洲流媒体"
+  - "RULE-SET,niconico,🎌 亚洲流媒体"
+  - "RULE-SET,abema,🎌 亚洲流媒体"
+  - "RULE-SET,viu,🎌 亚洲流媒体"
+  - "RULE-SET,kktv,🎌 亚洲流媒体"
+  - "RULE-SET,steam,🎮 Steam"
+  - "RULE-SET,epicgames,🖥️ PC 游戏"
+  - "RULE-SET,ea,🖥️ PC 游戏"
+  - "RULE-SET,ubisoft,🖥️ PC 游戏"
+  - "RULE-SET,blizzard,🖥️ PC 游戏"
+  - "RULE-SET,gog,🖥️ PC 游戏"
+  - "RULE-SET,riot,🖥️ PC 游戏"
+  - "RULE-SET,playstation,🎯 主机游戏"
+  - "RULE-SET,xbox,🎯 主机游戏"
+  - "RULE-SET,nintendo,🎯 主机游戏"
+  - "RULE-SET,docker,🛠️ 开发工具"
+  - "RULE-SET,npmjs,🛠️ 开发工具"
+  - "RULE-SET,jetbrains,🛠️ 开发工具"
+  - "RULE-SET,stackexchange,🛠️ 开发工具"
+  - "RULE-SET,dropbox,💾 网盘存储"
+  - "RULE-SET,notion,💾 网盘存储"
+  - "RULE-SET,paypal,💳 支付平台"
+  - "RULE-SET,stripe,💳 支付平台"
+  - "RULE-SET,wise,💳 支付平台"
+  - RULE-SET,binance,₿ 加密货币
+  - "RULE-SET,bbc,📰 新闻资讯"
+  - "RULE-SET,cnn,📰 新闻资讯"
+  - "RULE-SET,nytimes,📰 新闻资讯"
+  - "RULE-SET,wsj,📰 新闻资讯"
+  - "RULE-SET,bloomberg,📰 新闻资讯"
+  - "RULE-SET,amazon,🛒 海淘购物"
+  - "RULE-SET,ebay,🛒 海淘购物"
+  - "RULE-SET,geolocation-!cn,🌍 非中国"
+  - "RULE-SET,cn,🔒 国内服务"
+  - "MATCH,🐟 漏网之鱼"
